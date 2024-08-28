@@ -40,26 +40,24 @@ USART2->CR2 = 0XB00;    // CLK of uart2
  init_GP(PA,15,IN,I_PP);
 		
 while(1)
-	{
-		int v=3; short k; 
-		short	dw1=0;short dw2=0;short dw3=0;
-		int dw11=0; short dw21=0;short dw31=0;
-	  short	dw12=0;short dw22=0; short dw32=0;
-	  short	dw13=0;short dw23=0;short dw33=0;
-	  short	dw14=0;short dw24=0;short dw34=0;
+{
+	 int v=3; short k; 
+	 short dw1=0;short dw2=0;short dw3=0;
+	 int dw11=0; short dw21=0;short dw31=0;
+	 short	dw12=0;short dw22=0; short dw32=0;
+	 short	dw13=0;short dw23=0;short dw33=0;
+	 short	dw14=0;short dw24=0;short dw34=0;	
+	 short f1=0; short f2=0;short f3=0;short f4=0;short f5=0;
 		
-	  short f1=0; short f2=0;short f3=0;short f4=0;short f5=0;
 		
-		
-		shift(w,10);shift(a,10);shift(h,10);shift(d,10);shift(a,10);shift(n,10);  // my name
+	 shift(w,10);shift(a,10);shift(h,10);shift(d,10);shift(a,10);shift(n,10);  // my name
 		
 		for (int i=0; i<900;i++){
-		if(R_GP(PA,11)==1)  { 	v++;  }
-		if(R_GP(PA,12)==1)	{		v--	;}
-		
+		if(R_GP(PA,11)==1)  { v++;}
+		if(R_GP(PA,12)==1)  {v--;}
 		if(R_GP(PA,15)==1)
-			{	
-      for (int i=0; i<4;i++)  {drow(3,v);drow(4,v);drow(6,v);drow(7,v); k=v;  }
+		{	
+                   for (int i=0; i<4;i++)      {drow(3,v);drow(4,v);drow(6,v);drow(7,v); k=v;  }
 	  	}
 			 if (k==3){f1=0;dw1=0; dw2=0; dw3=0;}
 			 if (k==0){f2=0;dw11=0; dw21=0; dw31=0;}
@@ -69,15 +67,15 @@ while(1)
 			
 			 for (int i=0; i<5;i++)
 			 { 
-      if (f1>=v+10  && k!=3)  { drow(7,3); if(dw1>50){drow(6,3);}  if(dw2>100){drow(5,3);}  if(dw3>150){drow(4,3);}}
+                  if (f1>=v+10  && k!=3)  { drow(7,3); if(dw1>50){drow(6,3);}   if(dw2>100){drow(5,3);}   if(dw3>150){drow(4,3);}}
 		  if (f2>=v+40  && k!=0)  { drow(7,0); if(dw11>50){drow(6,0);}  if(dw21>100){drow(5,0);}  if(dw31>150){drow(4,0);}}
-			if (f3>=v+20  && k!=7)  { drow(7,7); if(dw12>50){drow(6,7);}  if(dw22>100){drow(5,7);}  if(dw32>150){drow(4,7);}}
+	  	  if (f3>=v+20  && k!=7)  { drow(7,7); if(dw12>50){drow(6,7);}  if(dw22>100){drow(5,7);}  if(dw32>150){drow(4,7);}}
 		  if (f4>=v+30  && k!=2)  { drow(7,2); if(dw13>50){drow(6,2);}  if(dw23>100){drow(5,2);}  if(dw33>150){drow(4,2);}}
-			if (f5>=v+15  && k!=2)  { drow(7,5); if(dw14>50){drow(6,2);}  if(dw24>100){drow(5,2);}  if(dw34>150){drow(4,5);}}
+		  if (f5>=v+15  && k!=2)  { drow(7,5); if(dw14>50){drow(6,2);}  if(dw24>100){drow(5,2);}  if(dw34>150){drow(4,5);}}
 			  }
 		game_tank(v);
      
-    f1++; f2++; f3++; f4++;f5++;
+                f1++; f2++; f3++; f4++;f5++;
 		dw1++;  dw2++;  dw3++; 
 		dw11++; dw21++; dw31++;
 		dw12++; dw22++; dw32++;
@@ -86,24 +84,7 @@ while(1)
  
 	}
 		
-		//DelayMs(100);
-
-	//	shift(w,10);
-		//shift(a,10);
-		//shift(h,10);
-		//shift(d,10);
-		//shift(a,10);
-		//shift(n,10);
-	//	max_print(t,1000); 
-	//	max_print(a,1000);
-		//max_print(n,1000);
 	
-	
-		
-		
-	 // count (99,500);
-	//	seg_print0to99(19,500 , 2);
-	//	seg_print0to99(4,500 , 2);
 	}
 }
 
